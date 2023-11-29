@@ -6,6 +6,7 @@ import { menuCategoriesRouter } from "./routers/menuCategoriesRouter.js";
 const app = express();
 const PORT = 5005;
 app.use(express.json());
+app.use(express.static("public"));
 
 //use router
 app.use("/api/v1/menus", menuRouter);
