@@ -107,8 +107,8 @@ const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
 
 const fetchMenus = async () => {
   const response = await fetch(apiurl);
-  const menus = await response.json();
-  console.log(menus);
+  const menuCategories = await response.json();
+  console.log(menuCategories);
 };
 
 fetchMenus();
@@ -116,7 +116,7 @@ fetchMenus();
 
 ##
 
-## Get menu by id
+## Get menu category by id
 
 ```js
 https://menuapi-23fs.onrender.com/api/v1/menu-categories/id-here
@@ -129,8 +129,8 @@ const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
 
 const fetchMenus = async (menuId) => {
   const response = await fetch(`${apiurl}/${menuId}`);
-  const menus = await response.json();
-  console.log(menus);
+  const menuCategories = await response.json();
+  console.log(menuCategories);
 };
 
 fetchMenus(23);
@@ -138,7 +138,7 @@ fetchMenus(23);
 
 ##
 
-## Get menu by name
+## Get menu category by name
 
 ```js
 https://menuapi-23fs.onrender.com/api/v1/menu-categories?name=menu-category-name-here
@@ -151,8 +151,8 @@ const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
 
 const fetchMenus = async (name) => {
   const response = await fetch(`${apiurl}?name=${name}`);
-  const menus = await response.json();
-  console.log(menus);
+  const menuCategories = await response.json();
+  console.log(menuCategories);
 };
 
 fetchMenus("Salad");
