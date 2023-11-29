@@ -3,6 +3,30 @@ import { menus } from "../db.js";
 export const menuRouter = express.Router();
 
 menuRouter.get("/", (req, res) => {
+  let filterdMenus;
+  if (req.query) {
+    const { name, mcid } = req.query;
+
+    if (name) {
+      const menuName = name.toLocaleLowerCase().replace(/\s/g, "");
+      filterdMenus = menus.filter(
+        (item) => item.name.toLocaleLowerCase().replace(/\s/g, "") === menuName
+      );
+    }
+
+    if (mcid) {
+      filterdMenus = menus.filter((item) =>
+        item.menuCategoryIds.includes(Number(mcid))
+      );
+    }
+
+    if (filterdMenus.length) {
+      return res.send(filterdMenus);
+    } else {
+      return res.send({ error: "No menus found!" });
+    }
+  }
+
   res.send(menus);
 });
 
