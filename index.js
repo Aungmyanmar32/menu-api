@@ -9,7 +9,7 @@ app.use(express.json());
 
 //use router
 app.use("/api/v1/menus", menuRouter);
-app.use("/api/v1/menuCategories", menuCategoriesRouter);
+app.use("/api/v1/menu-categories", menuCategoriesRouter);
 
 app.get("/", (req, res) => {
   res.send("hello");

@@ -5,3 +5,14 @@ export const menuRouter = express.Router();
 menuRouter.get("/", (req, res) => {
   res.send(menus);
 });
+
+menuRouter.get("/:id", (req, res) => {
+  const id = req.params.id;
+
+  const filteredMenu = menus.find((item) => item.id === Number(id));
+  if (filteredMenu) {
+    res.send(filteredMenu);
+  } else {
+    res.status(404).send({ error: "Menu not found !!" });
+  }
+});
