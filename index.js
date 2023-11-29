@@ -1,5 +1,5 @@
 import express from "express";
-import { menuRouter } from "./routers/menusRouters";
+import { menuRouter } from "./routers/menusRouters.js";
 
 const app = express();
 const PORT = 5005;
