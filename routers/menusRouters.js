@@ -4,7 +4,9 @@ export const menuRouter = express.Router();
 
 menuRouter.get("/", (req, res) => {
   let filterdMenus = [];
-  if (req.query) {
+  console.log(req.query.length);
+  const { name, mcid } = req.query;
+  if (name || mcid) {
     const { name, mcid } = req.query;
 
     if (name) {
