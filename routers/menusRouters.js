@@ -3,7 +3,7 @@ import { menus } from "../db.js";
 export const menuRouter = express.Router();
 
 menuRouter.get("/", (req, res) => {
-  let filterdMenus;
+  let filterdMenus = [];
   if (req.query) {
     const { name, mcid } = req.query;
 
