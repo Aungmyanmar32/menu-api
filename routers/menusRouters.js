@@ -4,11 +4,9 @@ export const menuRouter = express.Router();
 
 menuRouter.get("/", (req, res) => {
   let filterdMenus = [];
-  console.log(req.query.length);
+
   const { name, mcid } = req.query;
   if (name || mcid) {
-    const { name, mcid } = req.query;
-
     if (name) {
       const menuName = name.toLocaleLowerCase().replace(/\s/g, "");
       filterdMenus = menus.filter(
