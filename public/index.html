@@ -4,156 +4,221 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu API Test</title>
+
+    <style>
+      pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 10px;
+        overflow-x: auto;
+      }
+
+      code {
+        display: block;
+        white-space: pre-wrap;
+      }
+
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .items {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 50vw;
+      }
+
+      details {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: auto;
+        width: 50vw;
+      }
+
+      summary {
+        background-color: #f4f4f4;
+        padding: 10px;
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+        position: relative;
+        font-size: 1.5rem;
+      }
+    </style>
   </head>
   <body>
-    <h1>Menu API for Test</h1>
+    <div class="main">
+      <h1>Menu API for Test</h1>
+      <div class="items">
+        <div>
+          <details>
+            <summary>
+              <font size="5rem">Menu</font>
+            </summary>
+            <details>
+              <summary>
+                <font size="3rem">Get all menu</font>
+              </summary>
+              <pre>
+              <code>https://menuapi-23fs.onrender.com/api/v1/menus
+              </code></pre>
 
-    <h2>How to Use</h2>
+              <pre>
+              <code>// usage
+              
+              const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menus";
+              
+              const fetchMenus = async () => {
+                const response = await fetch(apiUrl);
+                const menus = await response.json();
+                console.log(menus);
+              };
+              
+              fetchMenus();
+              </code></pre>
+            </details>
 
-    <h3>Menu</h3>
+            <details>
+              <summary><font size="3rem">Get menu by ID</font></summary>
+              <pre>
+              <code>https://menuapi-23fs.onrender.com/api/v1/menus/id-here
+              </code></pre>
 
-    <h4>Get all menu</h4>
+              <pre>
+              <code>// usage
+              
+              const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menus";
+              
+              const fetchMenus = async (menuId) => {
+                const response = await fetch(`${apiUrl}/${menuId}`);
+                const menus = await response.json();
+                console.log(menus);
+              };
+              
+              fetchMenus(23);
+              </code></pre>
+            </details>
+            <details>
+              <summary><font size="3rem">Get menu by name</font></summary>
+              <pre>
+              <code>https://menuapi-23fs.onrender.com/api/v1/menus?name=menu-name-here
+              </code></pre>
 
-    <pre>
-<code>https://menuapi-23fs.onrender.com/api/v1/menus
-</code></pre>
+              <pre>
+              <code>// usage
+              
+              const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menus";
+              
+              const fetchMenus = async (menuName) => {
+                const response = await fetch(`${apiUrl}?name=${menuName}`);
+                const menus = await response.json();
+                console.log(menus);
+              };
+              
+              fetchMenus("Orange juice");
+              </code></pre>
+            </details>
+            <details>
+              <summary>
+                <font size="3rem">Get menu by category id</font>
+              </summary>
+              <pre>
+              <code>https://menuapi-23fs.onrender.com/api/v1/menus?mcid=mcid-here
+              </code></pre>
 
-    <pre>
-<code>// usage
+              <pre>
+              <code>// usage
+              
+              const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menus";
+              
+              const fetchMenus = async (mcid) => {
+                const response = await fetch(`${apiUrl}?mcid=${mcid}`);
+                const menus = await response.json();
+                console.log(menus);
+              };
+              
+              fetchMenus(5);
+              </code></pre>
+            </details>
+          </details>
+        </div>
+        <hr />
+        <div>
+          <details>
+            <summary><font size="5rem">Menu category</font></summary>
 
-const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menus";
+            <details>
+              <summary><font size="3rem">Get all menu category </font></summary>
+              <pre>
+          <code>https://menuapi-23fs.onrender.com/api/v1/menu-categories
+          </code></pre>
 
-const fetchMenus = async () => {
-  const response = await fetch(apiUrl);
-  const menus = await response.json();
-  console.log(menus);
-};
+              <pre>
+          <code>// usage
+          
+          const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
+          
+          const fetchMenus = async () => {
+            const response = await fetch(apiUrl);
+            const menuCategories = await response.json();
+            console.log(menuCategories);
+          };
+          
+          fetchMenus();
+          </code></pre>
+            </details>
+            <details>
+              <summary><font size="3rem">Get menu category id</font></summary>
+              <pre>
+          <code>https://menuapi-23fs.onrender.com/api/v1/menu-categories/id-here
+          </code></pre>
 
-fetchMenus();
-</code></pre>
+              <pre>
+          <code>// usage
+          
+          const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
+          
+          const fetchMenus = async (menuId) => {
+            const response = await fetch(`${apiUrl}/${menuId}`);
+            const menuCategories = await response.json();
+            console.log(menuCategories);
+          };
+          
+          fetchMenus(23);
+          </code></pre>
+            </details>
+            <details>
+              <summary>
+                <font size="3rem">Get menu category by name</font>
+              </summary>
+              <pre>
+          <code>https://menuapi-23fs.onrender.com/api/v1/menu-categories?name=menu-category-name-here
+          </code></pre>
 
-    <h4>Get menu by id</h4>
-
-    <pre>
-<code>https://menuapi-23fs.onrender.com/api/v1/menus/id-here
-</code></pre>
-
-    <pre>
-<code>// usage
-
-const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menus";
-
-const fetchMenus = async (menuId) => {
-  const response = await fetch(`${apiUrl}/${menuId}`);
-  const menus = await response.json();
-  console.log(menus);
-};
-
-fetchMenus(23);
-</code></pre>
-
-    <h4>Get menu by name</h4>
-
-    <pre>
-<code>https://menuapi-23fs.onrender.com/api/v1/menus?name=menu-name-here
-</code></pre>
-
-    <pre>
-<code>// usage
-
-const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menus";
-
-const fetchMenus = async (menuName) => {
-  const response = await fetch(`${apiUrl}?name=${menuName}`);
-  const menus = await response.json();
-  console.log(menus);
-};
-
-fetchMenus("Orange juice");
-</code></pre>
-
-    <h4>Get menu by menu category id</h4>
-
-    <pre>
-<code>https://menuapi-23fs.onrender.com/api/v1/menus?mcid=mcid-here
-</code></pre>
-
-    <pre>
-<code>// usage
-
-const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menus";
-
-const fetchMenus = async (mcid) => {
-  const response = await fetch(`${apiUrl}?mcid=${mcid}`);
-  const menus = await response.json();
-  console.log(menus);
-};
-
-fetchMenus(5);
-</code></pre>
-
-    <h3>Menu Categories</h3>
-
-    <h4>Get all menu categories</h4>
-
-    <pre>
-<code>https://menuapi-23fs.onrender.com/api/v1/menu-categories
-</code></pre>
-
-    <pre>
-<code>// usage
-
-const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
-
-const fetchMenus = async () => {
-  const response = await fetch(apiUrl);
-  const menuCategories = await response.json();
-  console.log(menuCategories);
-};
-
-fetchMenus();
-</code></pre>
-
-    <h4>Get menu category by id</h4>
-
-    <pre>
-<code>https://menuapi-23fs.onrender.com/api/v1/menu-categories/id-here
-</code></pre>
-
-    <pre>
-<code>// usage
-
-const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
-
-const fetchMenus = async (menuId) => {
-  const response = await fetch(`${apiUrl}/${menuId}`);
-  const menuCategories = await response.json();
-  console.log(menuCategories);
-};
-
-fetchMenus(23);
-</code></pre>
-
-    <h4>Get menu category by name</h4>
-
-    <pre>
-<code>https://menuapi-23fs.onrender.com/api/v1/menu-categories?name=menu-category-name-here
-</code></pre>
-
-    <pre>
-<code>// usage
-
-const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
-
-const fetchMenus = async (name) => {
-  const response = await fetch(`${apiUrl}?name=${name}`);
-  const menuCategories = await response.json();
-  console.log(menuCategories);
-};
-
-fetchMenus("Salad");
-</code></pre>
-
+              <pre>
+          <code>// usage
+          
+          const apiUrl = "https://menuapi-23fs.onrender.com/api/v1/menu-categories";
+          
+          const fetchMenus = async (name) => {
+            const response = await fetch(`${apiUrl}?name=${name}`);
+            const menuCategories = await response.json();
+            console.log(menuCategories);
+          };
+          
+          fetchMenus("Salad");
+          </code></pre>
+            </details>
+          </details>
+        </div>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
