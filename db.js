@@ -36,7 +36,7 @@ export const menus = [
   {
     id: 1,
     name: "Mont Him Khar",
-    description: "",
+    description: "Burmese rice noodle soup with fish and soft banana plant",
     price: 1000,
     assetUrl:
       "https://msquarefdc.sgp1.digitaloceanspaces.com/foodie-pos/msquarefdc/1701844433945_mohinga.jpg",
@@ -47,7 +47,7 @@ export const menus = [
   {
     id: 2,
     name: "Shan Kout Swell",
-    description: "",
+    description: "Shan noodle with chicken and Mustard",
     price: 2000,
     assetUrl:
       "https://msquarefdc.sgp1.digitaloceanspaces.com/foodie-pos/msquarefdc/1701873747360_shan.jpg",
@@ -58,7 +58,7 @@ export const menus = [
   {
     id: 3,
     name: "Laphet Tote",
-    description: "",
+    description: "Tea-leaf salad with mixed fries beans and nuts",
     price: 1500,
     assetUrl:
       "https://msquarefdc.sgp1.digitaloceanspaces.com/foodie-pos/msquarefdc/1701844451016_laphet.jpg",
