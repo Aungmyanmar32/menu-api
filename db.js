@@ -1,4 +1,4 @@
-const menuCategories = [
+export const menuCategories = [
   {
     id: 1,
     name: "Most Popular",
@@ -32,7 +32,7 @@ const menuCategories = [
     name: "Dessert",
   },
 ];
-const menus = [
+export const menus = [
   {
     id: 1,
     name: "Mont Him Khar",
@@ -355,7 +355,7 @@ const menus = [
   },
 ];
 
-const addonCategories = [
+export const addonCategories = [
   { id: 1, name: "Size" },
   { id: 2, name: "Spicyness" },
   { id: 3, name: "Topping" },
@@ -364,7 +364,7 @@ const addonCategories = [
   { id: 6, name: "Cooked Options" },
 ];
 
-const addons = [
+export const addons = [
   {
     id: 1,
     name: "Normal",
